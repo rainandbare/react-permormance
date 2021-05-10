@@ -4,7 +4,6 @@
 * [here](https://reactjs.org/docs/optimizing-performance.html#profiling-components-with-the-chrome-performance-tab)
 * [here](https://www.smashingmagazine.com/2020/07/methods-performance-react-apps/)
 * [here](https://dmitripavlutin.com/use-react-memo-wisely/) 
-* here
 
 But this one is right in front of you. Hopefully this discussion will either solidify your knowledge of these topics or introduce you to them so that when you find out you need to optimize your application you know where to start. 
 
@@ -29,3 +28,11 @@ Other things that help with performance:
   - Context vs passing props
   - 
 ## 
+
+"Users enjoy fast and responsive user interfaces (UI). A UI response delay of fewer than 100 milliseconds feels instant to the user but a delay between 100 and 300 milliseconds is already perceptible."
+
+- Dmitri Pavlutin
+
+Turn on Profiler settings 
+1. Record why each component rendered while profiling.
+2.  Highlight updates when components render. (optional)
