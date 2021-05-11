@@ -36,3 +36,6 @@ Other things that help with performance:
 Turn on Profiler settings 
 1. Record why each component rendered while profiling.
 2.  Highlight updates when components render. (optional)
+
+
+useReducer needed because useState gives us a new function everytime and causes a rerender. 
