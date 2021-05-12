@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import { Radio, RadioGroup, Stack } from "@chakra-ui/react"
 import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json';
@@ -9,7 +9,7 @@ const Choices = ({val, setVal, modelId}) => {
   }
   return(
     <div>
-      {expensiveOperation()}
+      {useMemo(expensiveOperation, [expensiveFunc, longArray])}
       <RadioGroup 
         defaultValue={val[modelId]} 
         colorScheme="orange" 
