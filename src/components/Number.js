@@ -6,13 +6,13 @@ import {
   NumberIncrementStepper,
   NumberDecrementStepper,
 } from "@chakra-ui/react"
-import bubbleSort from '../utils/expensiveFunc';
+import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json'
 
 
 const Number = ({val, setVal}) => {
   const expensiveOperation = () => {
-    bubbleSort(longArray)
+    expensiveFunc(longArray)
   }
   const translateValString = (e) => {
     if(e === ''){
