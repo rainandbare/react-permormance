@@ -1,7 +1,7 @@
 import React from 'react';
 import { Radio, RadioGroup, Stack } from "@chakra-ui/react"
 import bubbleSort from '../utils/expensiveFunc';
-import longArray from '../utils/longArray.json'
+import longArray from '../utils/longArray.json';
 
 const Choices = ({val, setVal}) => {
   const expensiveOperation = () => {

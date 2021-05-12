@@ -4,7 +4,6 @@ import Dropdown from './Dropdown'
 import { Box, Flex, ListItem, List } from '@chakra-ui/react';
 
 const Compound = ({val, setVal}) => {
-  console.log(val)
   return(
     <List >
       <ListItem>
