@@ -1,8 +1,10 @@
-import React, { useState, useCallback, useReducer } from 'react';
+import React, { useCallback, useReducer } from 'react';
 import questions from '../MOCK_DATA.json'
 import defaultValues from '../MOCK_VALUES.json'
 import Question from "./Question";
-import {Box, Heading, OrderedList, useCallbackRef} from '@chakra-ui/react';
+import {Box, Heading, OrderedList} from '@chakra-ui/react';
+
+export const QuestionContext = React.createContext()
 
 const Questionnaire = () => {
   const reducer = (state, action) => {
@@ -26,24 +28,25 @@ const Questionnaire = () => {
   }, [dispatch])
 
   return(
-    <Box textAlign="left" maxW="sm">
-      <Heading as="h2" size="2xl" mb={6}>Questionnaire</Heading>
-      <OrderedList spacing={9}>
-        {
-          questions.map((quest) => (
-            <Question 
-              key={quest.id}
-              id={quest.id}
-              text={quest.questionText}
-              type={quest.type}
-              value={values[quest.id]}
-              modelId={quest.modelId}
-              setValues={setAllValues}
-            />
-          ))
-        }
-      </OrderedList>
-    </Box>
+    <QuestionContext.Provider value={values}>      
+      <Box textAlign="left" maxW="sm">
+        <Heading as="h2" size="2xl" mb={6}>Questionnaire</Heading>
+        <OrderedList spacing={9}>
+          {
+            questions.map((quest) => (
+              <Question 
+                key={quest.id}
+                id={quest.id}
+                text={quest.questionText}
+                type={quest.type}
+                modelId={quest.modelId}
+                setValues={setAllValues}
+              />
+            ))
+          }
+        </OrderedList>
+      </Box>
+    </QuestionContext.Provider>
   )
 }
 

@@ -8,12 +8,12 @@ import Compound from './Compound';
 import YesNoUnknown from './YesNoUnknown';
 import Number from './Number';
 
-const Question = React.memo(({text, type, value, setValues, modelId, id}) => {
+const Question = React.memo(({text, type, setValues, modelId, id}) => {
   const ComponentFromType = componentTypes[type]
   return(
     <ListItem>
       <Text mb={3}>{text}</Text>
-      <ComponentFromType val={value} setVal={setValues} modelId={modelId} id={id}/>
+      <ComponentFromType setVal={setValues} modelId={modelId} id={id}/>
     </ListItem>
   )
 })

@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { Radio, RadioGroup, Stack } from "@chakra-ui/react"
 import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json'
+import {QuestionContext} from './Questionnaire'
 
 
-const YesNoUnknown = ({val, setVal, modelId, id}) => {
+const YesNoUnknown = ({setVal, modelId, id}) => {
+
+  const val = useContext(QuestionContext);
   const expensiveOperation = () => {
     expensiveFunc(longArray)
   }
@@ -12,7 +15,7 @@ const YesNoUnknown = ({val, setVal, modelId, id}) => {
     <div>
       {expensiveOperation()}
       <RadioGroup
-        defaultValue={val[modelId]} 
+        defaultValue={val[id][modelId]} 
         colorScheme="orange" 
         onChange={(e) => setVal(e, id, modelId)}
       >

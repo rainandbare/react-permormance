@@ -1,10 +1,13 @@
-import React from 'react';
+import React, {useContext} from 'react';
 import { NumberInput, NumberInputField } from "@chakra-ui/react"
 import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json'
+import {QuestionContext} from './Questionnaire'
 
 
-const Number = ({val, setVal, modelId, id}) => {
+
+const Number = ({setVal, modelId, id}) => {
+  const val = useContext(QuestionContext);
   const expensiveOperation = () => {
     expensiveFunc(longArray)
   }
@@ -18,7 +21,7 @@ const Number = ({val, setVal, modelId, id}) => {
   return(
     <div>
       {expensiveOperation()}
-      <NumberInput defaultValue={val ? val[modelId] : null} onChange={translateValString}>
+      <NumberInput defaultValue={val && val[id] ? val[id][modelId] : null} onChange={translateValString}>
         <NumberInputField />
       </NumberInput>
     </div>
