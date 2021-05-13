@@ -12,7 +12,7 @@ const Number = ({val, setVal, modelId, id}) => {
     if(e === ''){
       setVal(null, id, modelId)
     } else {
-      setVal(e,id, modelId)
+      setVal(e, id, modelId)
     }
   }
   return(

@@ -2,7 +2,7 @@ import React, { useState, useCallback, useReducer } from 'react';
 import questions from '../MOCK_DATA.json'
 import defaultValues from '../MOCK_VALUES.json'
 import Question from "./Question";
-import {Box, Heading, OrderedList} from '@chakra-ui/react';
+import {Box, Heading, OrderedList, useCallbackRef} from '@chakra-ui/react';
 
 const Questionnaire = () => {
   const reducer = (state, action) => {
@@ -11,17 +11,20 @@ const Questionnaire = () => {
     }
     return state
   }
+
   const [values, dispatch] = useReducer(reducer, defaultValues)
+  
   const setAllValues = useCallback((newVal, id, modelId) => {
     dispatch({
       type: 'SET_VALUE',
       payload: {
         [id]: {
-              [modelId]: newVal
-            }
+          [modelId]: newVal
+        }
       }
     })
   }, [dispatch])
+
   return(
     <Box textAlign="left" maxW="sm">
       <Heading as="h2" size="2xl" mb={6}>Questionnaire</Heading>
