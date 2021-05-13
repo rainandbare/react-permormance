@@ -4,7 +4,7 @@ import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json'
 
 
-const YesNoUnknown = ({val, setVal, modelId}) => {
+const YesNoUnknown = ({val, setVal, modelId, id}) => {
   const expensiveOperation = () => {
     expensiveFunc(longArray)
   }
@@ -14,7 +14,7 @@ const YesNoUnknown = ({val, setVal, modelId}) => {
       <RadioGroup
         defaultValue={val[modelId]} 
         colorScheme="orange" 
-        onChange={(e) => setVal(e)}
+        onChange={(e) => setVal(e, id, modelId)}
       >
       <Stack direction="column">
         <Radio value="Y">Yes</Radio>

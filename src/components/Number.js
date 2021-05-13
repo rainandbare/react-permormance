@@ -4,15 +4,15 @@ import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json'
 
 
-const Number = ({val, setVal, modelId}) => {
+const Number = ({val, setVal, modelId, id}) => {
   const expensiveOperation = () => {
     expensiveFunc(longArray)
   }
   const translateValString = (e) => {
     if(e === ''){
-      setVal(null)
+      setVal(null, id, modelId)
     } else {
-      setVal(e)
+      setVal(e,id, modelId)
     }
   }
   return(
