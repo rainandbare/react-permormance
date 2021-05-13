@@ -13,13 +13,15 @@ Things we will cover:
 * [shouldComponentUpdate](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
 * [useCallback](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
 * [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo)
-* [React Profiler Dev Tool](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi?hl=en)
+* [React Profiler Dev Tool](https://reactjs.org/blog/2018/09/10/introducing-the-react-profiler.html)
+
 
 Other things that help with performance:
 
 * Code Splitting 
 * Lazy Loading
 * Web workers or service workers
+* Server Side Rendering
 
 "Users enjoy fast and responsive user interfaces (UI). A UI response delay of fewer than 100 milliseconds feels instant to the user but a delay between 100 and 300 milliseconds is already perceptible."
 
@@ -57,10 +59,10 @@ Tips:
 - You will often have to use `React.memo()` on a child component and `useCallback()` on the parent component to see a change in the child components rerendering functionality
 - REMEMBER the `useCallback` function needs a dependancy array, like `useEffect()`, in order to be effective at all! I have forgot many times. 
 
-### useMemo
-
 ### But most importantly: The structure of your application.
 
 ### useReducer
 
 useReducer needed because useState gives us a new function everytime and causes a rerender. 
+
+### And don't forget: useMemo
