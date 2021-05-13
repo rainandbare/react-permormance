@@ -10,7 +10,7 @@ const YesNoUnknown = ({val, setVal, modelId}) => {
   }
   return(
     <div>
-      {useMemo(expensiveOperation, [expensiveFunc, longArray])}
+      {useMemo(expensiveOperation, [])}
       <RadioGroup
         defaultValue={val[modelId]} 
         colorScheme="orange" 

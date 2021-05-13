@@ -17,7 +17,7 @@ const Number = ({val, setVal, modelId}) => {
   }
   return(
     <div>
-      {useMemo(expensiveOperation, [expensiveFunc, longArray])}
+      {useMemo(expensiveOperation, [])}
       <NumberInput defaultValue={val ? val[modelId] : null} onChange={translateValString}>
         <NumberInputField />
       </NumberInput>
