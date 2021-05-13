@@ -25,7 +25,8 @@ const Questionnaire = () => {
               key={quest.id}
               text={quest.questionText}
               type={quest.type}
-              value={values[quest.id][quest.modelId]}
+              value={values[quest.id]}
+              modelId={quest.modelId}
               setValues={(newVal) => setAllValues(newVal, quest.id, quest.modelId)}
             />
           ))

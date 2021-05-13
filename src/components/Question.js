@@ -8,12 +8,12 @@ import Compound from './Compound';
 import YesNoUnknown from './YesNoUnknown';
 import Number from './Number';
 
-const Question = ({text, type, value, setValues}) => {
+const Question = ({text, type, value, setValues, modelId}) => {
   const ComponentFromType = componentTypes[type]
   return(
     <ListItem>
       <Text mb={3}>{text}</Text>
-      <ComponentFromType val={value} setVal={setValues} />
+      <ComponentFromType val={value} setVal={setValues} modelId={modelId}/>
     </ListItem>
   )
 }

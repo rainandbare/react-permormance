@@ -4,7 +4,7 @@ import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json'
 
 
-const Number = ({val, setVal}) => {
+const Number = ({val, setVal, modelId}) => {
   const expensiveOperation = () => {
     expensiveFunc(longArray)
   }
@@ -18,7 +18,7 @@ const Number = ({val, setVal}) => {
   return(
     <div>
       {expensiveOperation()}
-      <NumberInput defaultValue={val} onChange={translateValString}>
+      <NumberInput defaultValue={val ? val[modelId] : null} onChange={translateValString}>
         <NumberInputField />
       </NumberInput>
     </div>

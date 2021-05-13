@@ -3,7 +3,7 @@ import { Radio, RadioGroup, Stack } from "@chakra-ui/react"
 import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json';
 
-const Choices = ({val, setVal}) => {
+const Choices = ({val, setVal, modelId}) => {
   const expensiveOperation = () => {
     expensiveFunc(longArray)
   }
@@ -11,7 +11,7 @@ const Choices = ({val, setVal}) => {
     <div>
       {expensiveOperation()}
       <RadioGroup 
-        defaultValue={val} 
+        defaultValue={val[modelId]} 
         colorScheme="orange" 
         onChange={(e) => setVal(e)}
       >
