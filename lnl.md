@@ -59,10 +59,12 @@ Tips:
 - You will often have to use `React.memo()` on a child component and `useCallback()` on the parent component to see a change in the child components rerendering functionality
 - REMEMBER the `useCallback` function needs a dependancy array, like `useEffect()`, in order to be effective at all! I have forgot many times. 
 
-### But most importantly: The structure of your application.
+## But most importantly: The structure of your application.
 
 ### useReducer
 
-useReducer needed because useState gives us a new function everytime and causes a rerender. 
+`useReducer` isn't usually listed as one of the hooks that you will need to use in order to make your React application performant but we need to leverage this tool because `useState` is giving us a brand new callback function everytime the application is called so we cannot effectively apply `useCallback`.
+
+`useReducer` takes two arguments: a reducer function and the current state, and returns a dispatch function (which will never change!! - that is what we need!) and the new state. 
 
 ### And don't forget: useMemo
