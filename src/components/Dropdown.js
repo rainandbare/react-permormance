@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useMemo} from 'react';
 import { Select } from "@chakra-ui/react"
 import expensiveFunc from '../utils/expensiveFunc';
 import longArray from '../utils/longArray.json'
@@ -9,7 +9,7 @@ const Dropdown = ({val, setVal}) => {
   }
   return(
     <div>
-      {expensiveOperation()}
+      {useMemo(expensiveOperation, [])}
       <Select placeholder="Select option">
         <option value="option1">Option 1</option>
         <option value="option2">Option 2</option>
