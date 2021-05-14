@@ -56,7 +56,7 @@ Things to Turn on in Profiler settings
 
 ### React.memo()
 
-React.memo() - not to be confused with the useMemo hook which we will talk about later - is a function that returns a component. The component is 'memoized' - what an awkward word - and the next time the component is asked to rerender, it first does a [SHALLOW comparison](https://github.com/facebook/react/blob/v16.8.6/packages/shared/shallowEqual.js) between the previous and next props. If they are the same the component will not rerender and will instead use the 'memoized' component. 
+React.memo() - not to be confused with the `useMemo` hook which we will talk about later - is a function that returns a component. The component is 'memoized' - think 'cached' if memoized trips you up - and the next time the component is asked to rerender, it first does a [SHALLOW comparison](https://github.com/facebook/react/blob/v16.8.6/packages/shared/shallowEqual.js) between the previous and next props. If they are the same the component will not rerender and will instead use the 'memoized' component. 
 
 React.memo() takes two arguments. The first is the component you want to memoize and the second is an optional callback function that will replace the default shallow comparison function. This is where you could implement an _.isEqual deep comparison from lodash or if you are confident that it won't be more of a performance hit than it is worth - you could use JSON.stringify to check the equality of the previous and next props. This second argument is very similar to the lifecycle method `shouldComponentUpdate(prev, next)` but for function components. 
 
@@ -64,11 +64,11 @@ React.memo() takes two arguments. The first is the component you want to memoize
 
 The second argument of Reat.memo() is especially helpful if your props objects are objects but if you are passing functions as props you have another tool to control how React.memo works: `useCallback`. Usually you run into a problem comparing two functions as props because on the parent components render it creates two different versions of the same function in memory and when it compares them it says - 'NOPE! Different functions! RERENDER!"
 
-The useCallback function takes two arguments - an inline function and an array of dependancies.  Once you wrap a function in useCallback, it will run the SAME memoized function unless one of the dependancies change. 
+The useCallback function takes two arguments - an inline function and an array of dependancies.  Once you wrap a function in useCallback, it will return the EXACT SAME function from memory unless one of the dependancies change. 
 
 Tips:
 - You will often have to use `React.memo()` on a child component and `useCallback()` on the parent component to see a change in the child components rerendering functionality
-- REMEMBER the `useCallback` function needs a dependancy array, like `useEffect()`, in order to be effective at all! I have forgot many times. 
+- REMEMBER the `useCallback()` function needs a dependancy array, like `useEffect()`, in order to be effective at all! I have forgot many times. 
 
 &nbsp;
 
