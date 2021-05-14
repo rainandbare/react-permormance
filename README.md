@@ -14,7 +14,7 @@ But this one is right here in front of you. Hopefully this discussion will eithe
 
 Things we will cover:
 
-* [React.memo / React.PureComponent ](https://nodejs.org)
+* [React.memo / React.PureComponent ](https://reactjs.org/docs/react-api.html)
 * [shouldComponentUpdate](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
 * [useCallback](https://reactjs.org/docs/react-component.html#shouldcomponentupdate)
 * [useMemo](https://reactjs.org/docs/hooks-reference.html#usememo)
