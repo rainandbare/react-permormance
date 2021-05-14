@@ -85,3 +85,7 @@ Tips:
 ### And don't forget: useMemo
 
 `useMemo` takes a callback function and a dependancies array and only returns the product of the function. `useMemo` returns the value while useCallback returns a function. It will only rerun if one of the dependancies change.
+
+### Gotchas with useContext and rerenders
+
+You can definitely use these perfomance optimizations with the Context API but there are a couple of gotchas. First, the profiler currently has a bug that says "The Parent component has updated" is the reason for a component updating because of context changing. This is because it is the default message. Second, the component will always update if the value that you are pulling in from context changes. You have to think about the structure of your app and where you pull in the context and which components are heavy in rerendering. [This article](https://lifesaver.codes/answer/preventing-rerenders-with-react-memo-and-usecontext-hook) gives some options about how to get around the issue, but ultimatly it is up to you to figure out a design that works for your application.  
