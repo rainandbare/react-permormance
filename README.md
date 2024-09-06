@@ -8,7 +8,7 @@
 * [Smashing Magazine](https://www.smashingmagazine.com/2020/07/methods-performance-react-apps/)
 * [Dmitri Pavlutin](https://dmitripavlutin.com/use-react-memo-wisely/) 
 
-But this one is right here in front of you. Hopefully this discussion will either solidify your knowledge of these topics or introduce you to them so that when you find out you need to optimize your application you know where to start. 
+But this one might be the right one for you. Hopefully this discussion will either solidify your knowledge of these topics or introduce you to them so that when you find out you need to optimize your application you know where to start. 
 
 &nbsp;
 
